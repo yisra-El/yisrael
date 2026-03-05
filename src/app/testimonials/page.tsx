@@ -1,9 +1,7 @@
 "use client";
-import { Input } from "@/components/ui/input";
 import { motion } from "framer-motion";
-import { Plane, PlaneIcon, SendIcon, X } from "lucide-react";
+import { SendIcon, X } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 import React, { useState } from 'react'
 
 const testimonials = [
@@ -41,7 +39,7 @@ const testimonials = [
 
 
 function Testimonials() {
-    const [feedback, setFeedback] = useState("");
+    // const [feedback, setFeedback] = useState("");
     const [formDisplay, setFormDisplay] = useState(false);
     const [feedbackCredForms, setFeedbackCredForms] = useState<{ name?: string, company?: string, role?: string, feedback?: string, label: string }[]>([
         { label: "name", name: "" },
@@ -89,7 +87,7 @@ function Testimonials() {
                             }} className="bg-[#27272c] text-white rounded-lg p-7 w-[32%] h-[230px] gap-4 flex flex-col justify-between shadow-[0_4px_8px_#0000001a]"
                             key={index}
                         >
-                            <p className="font-light italic text-md">"{testimonial.description}"</p>
+                            <p className="font-light italic text-md">&ldquo;{testimonial.description}&rdquo;</p>
                             <div className="flex items-center gap-4">
                                 <div className="w-12 h-12 rounded-full bg-gray-500 flex-shrink-0 relative">
                                     <Image src="/photo1.png" alt="image" fill />

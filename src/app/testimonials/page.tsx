@@ -92,17 +92,17 @@ function Testimonials() {
                                 <div className="w-12 h-12 rounded-full bg-gray-500 flex-shrink-0 relative">
                                     <Image src="/photo1.png" alt="image" fill />
                                 </div>
-                                <div className="flex flex-col gap-2">
+                                <div className="flex flex-col gap-1">
                                     <h4 className="text-base">{testimonial.name}</h4>
-                                    <p className="font-light text-sm italic text-accent">{testimonial.title}</p>
+                                    <p className="font-light text-[15px] font-semibold italic text-accent">{testimonial.title}</p>
                                 </div>
                             </div>
                         </motion.div>
                     ))}
 
                 </motion.div>
-                
-            
+
+
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{
@@ -114,11 +114,11 @@ function Testimonials() {
                     <div className={`${formDisplay ? "w-[500px] flex flex-wrap justify-between transition-all duration-600" : "hidden"} gap-3 px-6 pt-6 pb-12 border border-accent rounded-[16px] bg-[#27272c] shadow-[0_4px_8px_#0000001a]`}>
                         {feedbackCredForms.map((feedbackCredForm, index) => (
                             <div className={`${feedbackCredForm.label === "role" ? "w-[48%]" : feedbackCredForm.label === "name" ? "w-[48%]" : "w-full"} flex flex-col gap-2`} key={index}>
-                                <label className="capitalize text-[#a1a1a1] text-sm" htmlFor={feedbackCredForm.label}>{feedbackCredForm.label}</label>
+                                <label className="capitalize text-[#a1a1a1] text-base" htmlFor={feedbackCredForm.label}>{feedbackCredForm.label}</label>
                                 {feedbackCredForm.label === "feedback" ? (
-                                    <textarea rows={6} name={feedbackCredForm.label} id={feedbackCredForm.label} placeholder={`Your ${feedbackCredForm.label}`} value={feedbackCredForm[feedbackCredForm.label as keyof typeof feedbackCredForm] || ''} onChange={(e) => handleFieldUpdate(e, index)} className="w-full border border-[#1c1c1c] outline-none focus:border-accent bg-[#27272c] py-4 pl-6 pr-[130px] text-sm rounded-[8px] " />
+                                    <textarea rows={6} name={feedbackCredForm.label} id={feedbackCredForm.label} placeholder={`Your ${feedbackCredForm.label}`} value={feedbackCredForm[feedbackCredForm.label as keyof typeof feedbackCredForm] || ''} onChange={(e) => handleFieldUpdate(e, index)} className="w-full border border-[#1c1c1c] outline-none focus:border-accent bg-[#27272c] py-4 pl-6 pr-[130px] text-base rounded-[8px] " />
                                 ) : (
-                                    <input name={feedbackCredForm.label} id={feedbackCredForm.label} placeholder={`Your ${feedbackCredForm.label}`} value={feedbackCredForm[feedbackCredForm.label as keyof typeof feedbackCredForm] || ''} onChange={(e) => handleFieldUpdate(e, index)} className={`w-full border border-[#1c1c1c] outline-none focus:border-accent bg-[#27272c] py-4 px-6 text-sm rounded-[8px] `} />
+                                    <input name={feedbackCredForm.label} id={feedbackCredForm.label} placeholder={`Your ${feedbackCredForm.label}`} value={feedbackCredForm[feedbackCredForm.label as keyof typeof feedbackCredForm] || ''} onChange={(e) => handleFieldUpdate(e, index)} className={`w-full border border-[#1c1c1c] outline-none focus:border-accent bg-[#27272c] py-4 px-6 text-base rounded-[8px] `} />
                                 )}
                             </div>
                         ))}

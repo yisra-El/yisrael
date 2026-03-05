@@ -3,16 +3,16 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { usePathname } from 'next/navigation';
 import React, { ReactNode } from 'react'
 
-function PageTransition({children}: {children: ReactNode}) {
+function PageTransition({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   return (
     <AnimatePresence>
       <div key={pathname} className='h-full'>
         <motion.div
-          initial={{opacity: 1}}
+          initial={{ opacity: 1 }}
           animate={{
             opacity: 0,
-            transition: {delay: 1, duration: 0.4, ease: "easeInOut"}, 
+            transition: { delay: 1, duration: 0.4, ease: "easeInOut" },
           }}
           className='h-screen w-screen fixed bg-primary top-0 pointer-events-none'
         />

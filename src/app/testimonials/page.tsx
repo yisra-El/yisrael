@@ -43,8 +43,8 @@ function Testimonials() {
     const [formDisplay, setFormDisplay] = useState(false);
     const [feedbackCredForms, setFeedbackCredForms] = useState<{ name?: string, company?: string, role?: string, feedback?: string, label: string }[]>([
         { label: "name", name: "" },
-        { label: "company", company: "" },
         { label: "role", role: "" },
+        { label: "company", company: "" },
         { label: "feedback", feedback: "" }
     ]);
 
@@ -93,14 +93,16 @@ function Testimonials() {
                                     <Image src="/photo1.png" alt="image" fill />
                                 </div>
                                 <div className="flex flex-col gap-2">
-                                    <h4 className="text-sm">{testimonial.name}</h4>
-                                    <p className="font-light text-xs italic text-accent">{testimonial.title}</p>
+                                    <h4 className="text-base">{testimonial.name}</h4>
+                                    <p className="font-light text-sm italic text-accent">{testimonial.title}</p>
                                 </div>
                             </div>
                         </motion.div>
                     ))}
 
                 </motion.div>
+                
+            
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{
@@ -109,31 +111,31 @@ function Testimonials() {
                     }}
                     className="flex gap-3 justify-center items-center fixed bottom-12 right-12"
                 >
-                    <div className={`${formDisplay ? "flex" : "hidden"} absolute bottom-[110%] gap-3 p-6 border border-accent rounded-[16px]  w-full flex-wrap bg-[#27272c] shadow-[0_4px_8px_#0000001a]`}>
+                    <div className={`${formDisplay ? "w-[500px] flex flex-wrap justify-between transition-all duration-600" : "hidden"} gap-3 px-6 pt-6 pb-12 border border-accent rounded-[16px] bg-[#27272c] shadow-[0_4px_8px_#0000001a]`}>
                         {feedbackCredForms.map((feedbackCredForm, index) => (
-                            <div className="w-[200px] flex flex-col gap-2" key={index}>
+                            <div className={`${feedbackCredForm.label === "role" ? "w-[48%]" : feedbackCredForm.label === "name" ? "w-[48%]" : "w-full"} flex flex-col gap-2`} key={index}>
                                 <label className="capitalize text-[#a1a1a1] text-sm" htmlFor={feedbackCredForm.label}>{feedbackCredForm.label}</label>
                                 {feedbackCredForm.label === "feedback" ? (
-                                    <textarea name={feedbackCredForm.label} id={feedbackCredForm.label} placeholder={`Your ${feedbackCredForm.label}`} value={feedbackCredForm[feedbackCredForm.label as keyof typeof feedbackCredForm] || ''} onChange={(e) => handleFieldUpdate(e, index)} className="w-full border border-[#1c1c1c] outline-none focus:border-accent bg-[#27272c] py-4 pl-6 pr-[130px] text-sm rounded-[8px] " />
+                                    <textarea rows={6} name={feedbackCredForm.label} id={feedbackCredForm.label} placeholder={`Your ${feedbackCredForm.label}`} value={feedbackCredForm[feedbackCredForm.label as keyof typeof feedbackCredForm] || ''} onChange={(e) => handleFieldUpdate(e, index)} className="w-full border border-[#1c1c1c] outline-none focus:border-accent bg-[#27272c] py-4 pl-6 pr-[130px] text-sm rounded-[8px] " />
                                 ) : (
-                                    <input name={feedbackCredForm.label} id={feedbackCredForm.label} placeholder={`Your ${feedbackCredForm.label}`} value={feedbackCredForm[feedbackCredForm.label as keyof typeof feedbackCredForm] || ''} onChange={(e) => handleFieldUpdate(e, index)} className="w-full border border-[#1c1c1c] outline-none focus:border-accent bg-[#27272c] py-4 pl-6 pr-[130px] text-sm rounded-[8px] " />
+                                    <input name={feedbackCredForm.label} id={feedbackCredForm.label} placeholder={`Your ${feedbackCredForm.label}`} value={feedbackCredForm[feedbackCredForm.label as keyof typeof feedbackCredForm] || ''} onChange={(e) => handleFieldUpdate(e, index)} className={`w-full border border-[#1c1c1c] outline-none focus:border-accent bg-[#27272c] py-4 px-6 text-sm rounded-[8px] `} />
                                 )}
                             </div>
                         ))}
                     </div>
 
                     {formDisplay ? (
-                        <span className="flex gap-4 absolute right-1.5">
+                        <span className="flex gap-4 absolute -bottom-5 right-3">
                             <span onClick={() => setFormDisplay(false)} className="px-5 py-4 font-medium h-10 rounded-full text-white hover:text-white/60 text-sm bg-accent hover:bg-accent-hover duration-500 transition-all cursor-pointer flex justify-center gap-2 items-center">
                                 <X />
                             </span>
-                            <span className="px-5 py-4 font-medium h-10 rounded-full text-white hover:text-white/60 text-sm bg-accent hover:bg-accent-hover duration-500 transition-all cursor-pointer flex justify-center gap-2 items-center">
+                            <span className="px-5 py-4 font-medium h-10 rounded-full text-white hover:text-white/60 text-base bg-accent hover:bg-accent-hover duration-500 transition-all cursor-pointer flex justify-center gap-2 items-center">
                                 <span>Post</span>
                                 <SendIcon />
                             </span>
                         </span>
                     ) : (
-                        <span onClick={() => setFormDisplay(true)} className="px-5 py-4 font-medium h-10 rounded-full text-white hover:text-white/60 text-sm bg-accent hover:bg-accent-hover duration-500 transition-all absolute cursor-pointer right-1.5 flex justify-center gap-2 items-center">
+                        <span onClick={() => setFormDisplay(true)} className="px-8 py-5 font-medium h-10 rounded-full text-white hover:text-white/60 text-base bg-accent hover:bg-accent-hover duration-500 transition-all absolute cursor-pointer -bottom-5 right-3 flex justify-center gap-2 items-center">
                             <span>Send Feedback</span>
                             <SendIcon />
                         </span>

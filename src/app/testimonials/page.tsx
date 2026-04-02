@@ -102,14 +102,14 @@ function Testimonials() {
                             }} className="bg-[#27272c] text-white rounded-lg p-7 w-[32%] h-[230px] gap-4 flex flex-col justify-between shadow-[0_4px_8px_#0000001a]"
                             key={index}
                         >
-                            <p className="font-light italic text-md">&ldquo;{testimonial.description}&rdquo;</p>
+                            <p className="font-light font-inter italic text-base"><span className="text-[40px]">&ldquo;</span>{testimonial.description}<span>&rdquo;</span></p>
                             <div className="flex items-center gap-4">
-                                <div className="w-12 h-12 rounded-full bg-gray-500 flex-shrink-0 relative">
+                                <div className="w-10 h-10 rounded-full bg-gray-500 flex-shrink-0 relative">
                                     <Image src="/photo1.png" alt="image" fill />
                                 </div>
-                                <div className="flex flex-col gap-1">
-                                    <h4 className="text-base">{testimonial.name}</h4>
-                                    <p className="font-light text-[15px] font-semibold italic text-accent">{testimonial.title}</p>
+                                <div className="flex flex-col">
+                                    <h4 className="text-base font-inter">{testimonial.name}</h4>
+                                    <p className="font-light text-sm font-inter font-semibold italic text-accent">{testimonial.title}</p>
                                 </div>
                             </div>
                         </motion.div>
@@ -141,19 +141,19 @@ function Testimonials() {
 
                     {formDisplay ? (
                         <span className="flex gap-4 absolute -bottom-5 right-3">
-                            <span onClick={() => setFormDisplay(false)} className="px-5 py-4 font-medium h-10 rounded-full text-white hover:text-white/60 text-sm bg-accent hover:bg-accent-hover duration-500 transition-all cursor-pointer flex justify-center gap-2 items-center">
+                            <button onClick={() => setFormDisplay(false)} className="px-5 py-4 font-medium h-10 rounded-full text-white hover:text-white/60 text-sm bg-accent hover:bg-accent-hover duration-500 transition-all cursor-pointer flex justify-center gap-2 items-center">
                                 <X />
-                            </span>
-                            <span onClick={() => onUploadFeedback()} className="px-5 py-4 font-medium h-10 rounded-full text-white hover:text-white/60 text-base bg-accent hover:bg-accent-hover duration-500 transition-all cursor-pointer flex justify-center gap-2 items-center">
+                            </button>
+                            <button onClick={() => onUploadFeedback()} className="px-5 py-4 font-medium h-10 rounded-full text-white hover:text-white/60 text-base bg-accent hover:bg-accent-hover duration-500 transition-all cursor-pointer flex justify-center gap-2 items-center">
                                 <span>Post</span>
                                 <SendIcon />
-                            </span>
+                            </button>
                         </span>
                     ) : (
-                        <span onClick={() => setFormDisplay(true)} className=" py-5 font-medium h-10 rounded-full text-white hover:text-white/60 text-base bg-accent hover:bg-accent-hover duration-500 transition-all absolute cursor-pointer -bottom-5 right-3 flex justify-center gap-2 items-center">
+                        <button onClick={() => setFormDisplay(true)} className="w-[200px] font-inter flex items-center justify-center gap-2 font-medium h-10 rounded-full text-white hover:text-white/60 text-base bg-accent hover:bg-accent-hover duration-500 transition-all absolute cursor-pointer -bottom-5 right-3 ">
                             <span>Send Feedback</span>
                             <SendIcon />
-                        </span>
+                        </button>
                     )}
                 </motion.div>
             </div >

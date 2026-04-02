@@ -4,6 +4,9 @@
 
 
 @layer base {
+  :root {
+    --font-jetbrainsMono: 'JetBrains Mono', monospace;
+  }
   body{
     @apply font-primary bg-primary text-white leading-loose;
   }

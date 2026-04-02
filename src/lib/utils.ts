@@ -153,4 +153,85 @@ export const projects = [
         url: "https://exchainpayment.com",
       }
   },
+  {
+    image: ["/exchain/exchain1.png", "/exchain/exchain2.png"],
+    name: "exchain payment",
+    description: "A platform that provides advanced financial payments platform. Seamlessly integrating cryptocurrencies, we empower you to broaden your horizons, simplify transactions, and confidently shape the future of finance. ",
+    links:{
+        role: "visit",
+        url: "https://exchainpayment.com",
+      }
+  },
+  {
+    image: ["/exchain/exchain1.png", "/exchain/exchain2.png"],
+    name: "Bridge Pay Admin",
+    description: "A platform that provides advanced financial payments platform. Seamlessly integrating cryptocurrencies, we empower you to broaden your horizons, simplify transactions, and confidently shape the future of finance. ",
+    links:{
+        role: "visit",
+        url: "https://exchainpayment.com",
+      }
+  },
+  {
+    image: ["/exchain/exchain1.png", "/exchain/exchain2.png"],
+    name: "Macky's Food",
+    description: "A platform that provides advanced financial payments platform. Seamlessly integrating cryptocurrencies, we empower you to broaden your horizons, simplify transactions, and confidently shape the future of finance. ",
+    links:{
+        role: "visit",
+        url: "https://exchainpayment.com",
+      }
+  },
+  {
+    image: ["/exchain/exchain1.png", "/exchain/exchain2.png"],
+    name: "exchain payment",
+    description: "A platform that provides advanced financial payments platform. Seamlessly integrating cryptocurrencies, we empower you to broaden your horizons, simplify transactions, and confidently shape the future of finance. ",
+    links: {
+      role: "visit",
+      url: "https://exchainpayment.com",
+    }
+  },
+  {
+    image: ["/exchain/exchain1.png", "/exchain/exchain2.png"],
+    name: "Bridge Pay Admin",
+    description: "A platform that provides advanced financial payments platform. Seamlessly integrating cryptocurrencies, we empower you to broaden your horizons, simplify transactions, and confidently shape the future of finance. ",
+    links: {
+      role: "visit",
+      url: "https://exchainpayment.com",
+    }
+  },
+  {
+    image: ["/exchain/exchain1.png", "/exchain/exchain2.png"],
+    name: "Macky's Food",
+    description: "A platform that provides advanced financial payments platform. Seamlessly integrating cryptocurrencies, we empower you to broaden your horizons, simplify transactions, and confidently shape the future of finance. ",
+    links: {
+      role: "visit",
+      url: "https://exchainpayment.com",
+    }
+  },
+  {
+    image: ["/exchain/exchain1.png", "/exchain/exchain2.png"],
+    name: "exchain payment",
+    description: "A platform that provides advanced financial payments platform. Seamlessly integrating cryptocurrencies, we empower you to broaden your horizons, simplify transactions, and confidently shape the future of finance. ",
+    links: {
+      role: "visit",
+      url: "https://exchainpayment.com",
+    }
+  },
+  {
+    image: ["/exchain/exchain1.png", "/exchain/exchain2.png"],
+    name: "Bridge Pay Admin",
+    description: "A platform that provides advanced financial payments platform. Seamlessly integrating cryptocurrencies, we empower you to broaden your horizons, simplify transactions, and confidently shape the future of finance. ",
+    links: {
+      role: "visit",
+      url: "https://exchainpayment.com",
+    }
+  },
+  {
+    image: ["/exchain/exchain1.png", "/exchain/exchain2.png"],
+    name: "Macky's Food",
+    description: "A platform that provides advanced financial payments platform. Seamlessly integrating cryptocurrencies, we empower you to broaden your horizons, simplify transactions, and confidently shape the future of finance. ",
+    links: {
+      role: "visit",
+      url: "https://exchainpayment.com",
+    }
+  },
 ]

@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolling, setScrolling] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -15,11 +16,14 @@ function Header() {
     document.body.addEventListener("resize", () => {
       document.body.style.overflow = "visible";
     })
+    if (window.scrollY > 10) {
+      setScrolling(true)
+    }
   }, [pathname, setIsMenuOpen]);
 
 
   return (
-    <header className='w-full py-8 md:py-10 text-white'>
+    <header className={`w-full py-8 md:py-8 text-white ${scrolling && "sticky top-0 left-0 bg-primary"} z-[9000]`}>
       <div className='w-[90%] xsm:w-full max-w-[850px] tb:max-w-[1024px] xl:max-w-[1280px] laptop:max-w-[1340px] xsm:px-10 mtb:px-6 tb:px-16 lg:px-20 mx-auto flex justify-between items-center'>
         <Link href="/">
           <h1 className='text-4xl font-semibold'>

@@ -54,6 +54,21 @@ function Testimonials() {
         } : form
         ))
     }
+    const onUploadFeedback = () => {
+        const getFeedbackData = feedbackCredForms.reduce((acc, curr) => {
+            acc[curr.label] = curr[curr.label as keyof typeof curr] || "";
+            return acc;
+        }, {} as Record<string, string>);
+
+        const testimonialData = {
+            name: getFeedbackData.name,
+            title: `${getFeedbackData.role}, ${getFeedbackData.company}`,
+            description: getFeedbackData.feedback
+        };
+
+        testimonials.push(testimonialData);
+        setFormDisplay(false);
+    }
 
     return (
         <section className="min-h-[80vh] flex flex-col justify-center items-center py-12 xl:py-0">
@@ -129,13 +144,13 @@ function Testimonials() {
                             <span onClick={() => setFormDisplay(false)} className="px-5 py-4 font-medium h-10 rounded-full text-white hover:text-white/60 text-sm bg-accent hover:bg-accent-hover duration-500 transition-all cursor-pointer flex justify-center gap-2 items-center">
                                 <X />
                             </span>
-                            <span className="px-5 py-4 font-medium h-10 rounded-full text-white hover:text-white/60 text-base bg-accent hover:bg-accent-hover duration-500 transition-all cursor-pointer flex justify-center gap-2 items-center">
+                            <span onClick={() => onUploadFeedback()} className="px-5 py-4 font-medium h-10 rounded-full text-white hover:text-white/60 text-base bg-accent hover:bg-accent-hover duration-500 transition-all cursor-pointer flex justify-center gap-2 items-center">
                                 <span>Post</span>
                                 <SendIcon />
                             </span>
                         </span>
                     ) : (
-                        <span onClick={() => setFormDisplay(true)} className="px-8 py-5 font-medium h-10 rounded-full text-white hover:text-white/60 text-base bg-accent hover:bg-accent-hover duration-500 transition-all absolute cursor-pointer -bottom-5 right-3 flex justify-center gap-2 items-center">
+                        <span onClick={() => setFormDisplay(true)} className=" py-5 font-medium h-10 rounded-full text-white hover:text-white/60 text-base bg-accent hover:bg-accent-hover duration-500 transition-all absolute cursor-pointer -bottom-5 right-3 flex justify-center gap-2 items-center">
                             <span>Send Feedback</span>
                             <SendIcon />
                         </span>

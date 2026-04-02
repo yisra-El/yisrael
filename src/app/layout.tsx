@@ -6,10 +6,10 @@ import PageTransition from "@/components/PageTransition";
 import StairTransition from "@/components/StairTransition";
 
 const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
-  variable: "--font-jetbrainsMono",
-})
+  variable: '--font-jetbrainsMono',
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700']
+});
 
 export const metadata: Metadata = {
   title: "Yisrael",
